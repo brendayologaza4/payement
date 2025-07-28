@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Paiement Unique</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <section class="pricing">
+        <h1>Choisissez votre offre</h1>
+        <div class="plans">
+            <div class="plan">
+                <h2>Standard</h2>
+                <p>250 €</p>
+                <a href="/create-checkout-session/250" class="btn">Payer maintenant</a>
+            </div>
+            <div class="plan">
+                <h2>Business</h2>
+                <p>500 €</p>
+                <a href="/create-checkout-session/500" class="btn">Payer maintenant</a>
+            </div>
+            <div class="plan">
+                <h2>Premium</h2>
+                <p>1000 €</p>
+                <a href="/create-checkout-session/1000" class="btn">Payer maintenant</a>
+            </div>
+            <div class="plan">
+                <h2>Ultimate</h2>
+                <p>2000 €</p>
+                <a href="/create-checkout-session/2000" class="btn">Payer maintenant</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
