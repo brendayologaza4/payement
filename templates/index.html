@@ -7,22 +7,66 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">Choisissez Votre Plan</h1>
+  <section class="pricing">
+    <h1 class="title">Choisissez votre offre</h1>
     <div class="cards">
-      {% for offer in offers %}
+      {% if offers %}
+        {% for offer in offers %}
+          <div class="card">
+            <h2>{{ offer.name }}</h2>
+            <p class="price">{{ offer.price }} €</p>
+            <ul>
+              <li>✔ Paiement sécurisé</li>
+              <li>✔ Accès immédiat</li>
+              <li>✔ Support dédié</li>
+            </ul>
+            <a href="/create-checkout-session/{{ offer.price }}" class="btn">Payer maintenant</a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Version statique si la variable offers n'est pas passée -->
         <div class="card">
-          <h2>{{ offer.name }}</h2>
-          <p class="price">{{ offer.price }} €</p>
+          <h2>Standard</h2>
+          <p class="price">250 €</p>
           <ul>
             <li>✔ Paiement sécurisé</li>
             <li>✔ Accès immédiat</li>
             <li>✔ Support dédié</li>
           </ul>
-          <a href="/create-checkout-session/{{ offer.price }}" class="btn">Payer maintenant</a>
+          <a href="/create-checkout-session/250" class="btn">Payer maintenant</a>
         </div>
-      {% endfor %}
+        <div class="card">
+          <h2>Business</h2>
+          <p class="price">500 €</p>
+          <ul>
+            <li>✔ Paiement sécurisé</li>
+            <li>✔ Accès immédiat</li>
+            <li>✔ Support dédié</li>
+          </ul>
+          <a href="/create-checkout-session/500" class="btn">Payer maintenant</a>
+        </div>
+        <div class="card">
+          <h2>Premium</h2>
+          <p class="price">1000 €</p>
+          <ul>
+            <li>✔ Paiement sécurisé</li>
+            <li>✔ Accès immédiat</li>
+            <li>✔ Support dédié</li>
+          </ul>
+          <a href="/create-checkout-session/1000" class="btn">Payer maintenant</a>
+        </div>
+        <div class="card">
+          <h2>Ultimate</h2>
+          <p class="price">2000 €</p>
+          <ul>
+            <li>✔ Paiement sécurisé</li>
+            <li>✔ Accès immédiat</li>
+            <li>✔ Support dédié</li>
+          </ul>
+          <a href="/create-checkout-session/2000" class="btn">Payer maintenant</a>
+        </div>
+      {% endif %}
     </div>
-  </div>
+  </section>
 </body>
 </html>
