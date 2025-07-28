@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
@@ -44,5 +44,5 @@ def success():
 def cancel():
     return render_template('cancel.html')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
